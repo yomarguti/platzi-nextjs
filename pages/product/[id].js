@@ -18,8 +18,8 @@ const ProductItem = () => {
   }, [id]);
   return (
     <div>
-      <h1>{productItem?.name}</h1>
-      <p>{productItem?.attributes.description}</p>
+      <h1 className="text-lg text-purple-700">{productItem?.name}</h1>
+      <p>{productItem?.attributes?.description}</p>
     </div>
   );
 };
