@@ -1,5 +1,5 @@
 import '../styles/tailwind.css';
-import Layout from '../components/Layout';
+import Layout from '@components/Layout';
 
 function App({ Component, pageProps }) {
   //Providers -Context Theme - Data
