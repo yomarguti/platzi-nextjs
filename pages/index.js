@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import ProductList from '@components/ProductList';
+import AvoHeader from '@components/AvoHeader';
 
 const Home = () => {
   const [productList, setProductList] = useState([]);
@@ -11,12 +13,10 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Hola mundo!!!</h1>
-      {productList.map((product) => {
-        return <div key={product.id}>{product.name}</div>;
-      })}
-    </div>
+    <>
+      <AvoHeader />
+      <ProductList products={productList} />;
+    </>
   );
 };
 

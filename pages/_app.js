@@ -1,3 +1,4 @@
+import 'semantic-ui-css/semantic.min.css';
 import '../styles/tailwind.css';
 import Layout from '@components/Layout';
 
