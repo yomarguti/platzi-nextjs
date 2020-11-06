@@ -1,19 +1,22 @@
 import React from 'react';
 
-import Link from 'next/link';
+import SVGAvocado from './SVGAvocado';
+import SVGBasquet from './SVGBasket';
 
-const Navbar = () => {
+import NavBarItem from './NavBarItem';
+
+const Navbar = ({ basquetQuantity = 0 }) => {
   return (
-    <nav>
-      <menu>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-        <Link href="/about">
-          <a>About</a>
-        </Link>
-      </menu>
-    </nav>
+    <div className="w-full h-20 text-xl rounded-md border border-gray-300 shadow">
+      <nav className="w-full sm:w-x-width mx-auto  flex justify-between items-center h-full px-2">
+        <NavBarItem href="/" title="Avo Store">
+          <SVGAvocado />
+        </NavBarItem>
+        <NavBarItem href="/cart" title={`Canasta (${basquetQuantity})`}>
+          <SVGBasquet />
+        </NavBarItem>
+      </nav>
+    </div>
   );
 };
 
