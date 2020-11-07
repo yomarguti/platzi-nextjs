@@ -3,3 +3,13 @@
 @tailwind components;
 /* purgecss end ignore */
 @tailwind utilities;
+
+@layer base {
+  a {
+    @apply text-blue-600;
+  }
+
+  a:hover {
+    @apply text-blue-800;
+  }
+}
