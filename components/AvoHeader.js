@@ -12,7 +12,7 @@ const AvoHeader = () => {
         <span>Avo</span>
       </div>
       <Link href="/yes-or-not">
-        <a className="text-blue-600 hover:text-blue-800 text-lg">¿Deberia comer un aguacate hoy?</a>
+        <a className="text-lg">¿Deberia comer un aguacate hoy?</a>
       </Link>
     </div>
   );
