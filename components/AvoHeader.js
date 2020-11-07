@@ -11,7 +11,7 @@ const AvoHeader = () => {
         <SVGAvocado size={60} />
         <span>Avo</span>
       </div>
-      <Link href="/yes-or-not">
+      <Link href="/yes-or-no">
         <a className="text-lg">¿Deberia comer un aguacate hoy?</a>
       </Link>
     </div>
