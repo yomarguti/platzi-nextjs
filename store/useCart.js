@@ -8,19 +8,26 @@ const initialState = {
 const reducer = (state, action) => {
   switch (action.type) {
     case 'add':
-      let quantity = 0;
-      const foundItem = state.items.find((item) => item.id === action.payload.id);
+      const newItem = action.payload;
+
+      const foundItem = state.items.find((item) => item.id === newItem.id);
+
       if (foundItem) {
-        quantity = foundItem.quantity + 1;
+        foundItem.quantity = foundItem.quantity + 1;
+        const newItems = [...state.items.filter((item) => item.id !== newItem.id), foundItem];
+        return {
+          ...state,
+          items: newItems,
+          quantity: state.quantity + 1,
+        };
       }
 
-      const newItem = { ...action.payload, quantity };
-      const newItems = [...state.items.filter((item) => item.id !== newItem.id), newItem];
+      newItem.quantity = 1;
 
       return {
         ...state,
-        items: newItems,
-        quantity: calculateQuantity(newItems),
+        items: [...state.items, newItem],
+        quantity: state.quantity + 1,
       };
     case 'remove':
       const items = [...state.items.filter((item) => item.id !== action.payload.id)];
