@@ -19,13 +19,16 @@ const reducer = (state, action) => {
 
       return {
         ...state,
-        items: [...newItems],
+        items: newItems,
         quantity: calculateQuantity(newItems),
       };
     case 'remove':
+      const items = [...state.items.filter((item) => item.id !== action.payload.id)];
+
       return {
         ...state,
-        todos: [...state.todos, action.payload],
+        items: [...items],
+        quantity: calculateQuantity(items),
       };
     default:
       return state;
