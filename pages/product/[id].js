@@ -1,26 +1,34 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { useRouter } from 'next/router';
+import React, { useContext } from 'react';
 
 import { Context as CartContext } from '../../store/useCart';
 
-const ProductItem = () => {
-  const {
-    query: { id },
-  } = useRouter();
+export const getStaticPaths = async () => {
+  const response = await fetch('https://platzi-nextjs-beryl.vercel.app/api/avo');
+  const { data: productList } = await response.json();
+  const paths = productList.map(({ id }) => ({ params: { id } }));
 
+  return {
+    paths,
+    fallback: false,
+  };
+};
+
+export const getStaticProps = async ({ params }) => {
+  const response = await fetch(`https://platzi-nextjs-beryl.vercel.app/api/avo/${params.id}`);
+  const data = await response.json();
+
+  return {
+    props: {
+      productItem: data,
+    },
+  };
+};
+
+const ProductItem = ({ productItem }) => {
   const [state, dispatch] = useContext(CartContext);
 
-  const [productItem, setProductItem] = useState({});
-
   const { name, sku, price, image, attributes } = productItem;
-  useEffect(() => {
-    id &&
-      window
-        .fetch(`/api/avo/${id}`)
-        .then((response) => response.json())
-        .then(setProductItem)
-        .catch((err) => console.error(err.message));
-  }, [id]);
+
   return (
     <>
       <div className="flex flex-col items-center sm:flex-row sm:justify-center">
