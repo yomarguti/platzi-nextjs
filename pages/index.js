@@ -1,17 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import ProductList from '@components/ProductList';
 import AvoHeader from '@components/AvoHeader';
 
-const Home = () => {
-  const [productList, setProductList] = useState([]);
+export const getServerSideProps = async () => {
+  const response = await fetch('https://platzi-nextjs-beryl.vercel.app/api/avo');
+  const { data } = await response.json();
+  return {
+    props: {
+      productList: JSON.parse(JSON.stringify(data)),
+    },
+  };
+};
 
-  useEffect(() => {
-    window
-      .fetch('/api/avo')
-      .then((response) => response.json())
-      .then(({ data, length }) => setProductList(data));
-  }, []);
-
+const Home = ({ productList }) => {
   return (
     <>
       <AvoHeader />
