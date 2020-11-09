@@ -3,39 +3,9 @@ import React, { useContext } from 'react';
 import { Context as CartContext } from '../../store/useCart';
 
 export const getStaticPaths = async () => {
-  /*   const response = await fetch('https://new-platzi-nextjs.vercel.app/api/avo');
-  const { data: productList } = await response.json(); */
+  const response = await fetch('https://platzi-nextjs-yomarguti.vercel.app/api/avo');
+  const { data: productList } = await response.json();
 
-  const productList = [
-    {
-      name: 'Maluma Hass Avocado',
-      id: '2zd33b8c',
-      sku: 'NUR72KCM',
-      price: 1.15,
-      image: '/images/maluma.jpg',
-      attributes: {
-        description:
-          'A relatively new cultivar, it was, the pretty boy baby, discovered in South Africa in the early 1990s by Mr. A.G. (Dries) Joubert. Maluma Babyy. It is a chance seedling of unknown parentage',
-        shape: 'Oval',
-        hardiness: '1 °C',
-        taste: 'Catchy, is an avocado',
-      },
-    },
-    {
-      name: 'Fuerte Avocado',
-      id: '6trfgkkj',
-      sku: 'AX4M8SJV',
-      price: 1.21,
-      image: '/images/fuerte.jpg',
-      attributes: {
-        description:
-          'The Fuerte avocado is the second largest commercial variety behind Hass. It is a long time California commercial variety valued for its winter season ripening and its B-Type blossom type which most growers plant adjacent to the Hass for a more consistent production cycle. This avocado tends to produce heavily in alternate years.',
-        shape: 'Pear',
-        hardiness: '-1 °C',
-        taste: 'Magnificent, is a strong avocado',
-      },
-    },
-  ];
   const paths = productList.map(({ id }) => ({ params: { id } }));
 
   return {
@@ -45,23 +15,8 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }) => {
-  /*   const response = await fetch(`https://new-platzi-nextjs.vercel.app/api/avo/${params.id}`);
-  const data = await response.json(); */
-
-  const data = {
-    name: 'Fuerte Avocado',
-    id: '6trfgkkj',
-    sku: 'AX4M8SJV',
-    price: 1.21,
-    image: '/images/fuerte.jpg',
-    attributes: {
-      description:
-        'The Fuerte avocado is the second largest commercial variety behind Hass. It is a long time California commercial variety valued for its winter season ripening and its B-Type blossom type which most growers plant adjacent to the Hass for a more consistent production cycle. This avocado tends to produce heavily in alternate years.',
-      shape: 'Pear',
-      hardiness: '-1 °C',
-      taste: 'Magnificent, is a strong avocado',
-    },
-  };
+  const response = await fetch(`https://platzi-nextjs-yomarguti.vercel.app/api/avo/${params.id}`);
+  const data = await response.json();
 
   return {
     props: {
