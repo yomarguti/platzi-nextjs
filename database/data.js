@@ -1,5 +1,5 @@
 const data = {
-  'y2zd33b8c': {
+  '2zd33b8c': {
     name: 'Maluma Hass Avocado',
     id: '2zd33b8c',
     sku: 'NUR72KCM',
@@ -13,7 +13,7 @@ const data = {
       taste: 'Catchy, is an avocado',
     },
   },
-  't6trfgkkj': {
+  '6trfgkkj': {
     name: 'Fuerte Avocado',
     id: '6trfgkkj',
     sku: 'AX4M8SJV',
@@ -27,7 +27,7 @@ const data = {
       taste: 'Magnificent, is a strong avocado',
     },
   },
-  'g7bcr49em': {
+  '7bcr49em': {
     name: 'Gwen Hass Avocado',
     id: '7bcr49em',
     sku: 'HYA78F6J',
@@ -41,7 +41,7 @@ const data = {
       taste: 'Superb, is an avocado',
     },
   },
-  'l098323ks': {
+  '098323ks': {
     name: 'Bacon Avocado',
     id: '098323ks',
     sku: 'BXD100BLK',
@@ -55,7 +55,7 @@ const data = {
       taste: 'Creamy, is an avocado',
     },
   },
-  'b8uthe2y': {
+  b8uthe2y: {
     name: 'Hass Avocado',
     id: 'b8uthe2y',
     sku: 'RMRCZN7E',
@@ -69,7 +69,7 @@ const data = {
       taste: 'Gorgeous, is an avocado',
     },
   },
-  'ewxsd6xb': {
+  ewxsd6xb: {
     name: 'Lamb Hass Avocado',
     id: 'ewxsd6xb',
     sku: 'N55229ZA',
@@ -83,7 +83,7 @@ const data = {
       taste: 'Great, is an avocado',
     },
   },
-  'fpr72m9k': {
+  fpr72m9k: {
     name: 'Pinkerton Avocado',
     id: 'fpr72m9k',
     sku: 'B4HZ42TM',
@@ -97,7 +97,7 @@ const data = {
       taste: 'Marvelous, is an avocado',
     },
   },
-  't9dv25gs': {
+  t9dv25gs: {
     name: 'Reed Avocado',
     id: 't9dv25gs',
     sku: 'ZY3T9XXC',
@@ -111,7 +111,7 @@ const data = {
       taste: 'Exquisite, is an avocado',
     },
   },
-  't345w48y': {
+  t345w48y: {
     name: 'Zutano Avocado',
     id: 't345w48y',
     sku: 'MW79ZZ6Y',
