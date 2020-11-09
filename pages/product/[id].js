@@ -3,25 +3,8 @@ import React, { useContext } from 'react';
 import { Context as CartContext } from '../../store/useCart';
 
 export const getStaticPaths = async () => {
-  /*   const response = await fetch('https://platzi-nextjs-57tsoo02g.vercel.app/api/avo');
-  const { data: productList } = await response.json(); */
-
-  const productList = [
-    {
-      name: 'Maluma Hass Avocado',
-      id: '2zd33b8c',
-      sku: 'NUR72KCM',
-      price: 1.15,
-      image: '/images/maluma.jpg',
-      attributes: {
-        description:
-          'A relatively new cultivar, it was, the pretty boy baby, discovered in South Africa in the early 1990s by Mr. A.G. (Dries) Joubert. Maluma Babyy. It is a chance seedling of unknown parentage',
-        shape: 'Oval',
-        hardiness: '1 °C',
-        taste: 'Catchy, is an avocado',
-      },
-    },
-  ];
+  const response = await fetch('https://platzi-nextjs.yomarguti.vercel.app/api/avo');
+  const { data: productList } = await response.json();
   const paths = productList.map(({ id }) => ({ params: { id } }));
 
   return {
@@ -31,23 +14,8 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }) => {
-  /*   const response = await fetch(`https://platzi-nextjs-57tsoo02g.vercel.app/api/avo/${params.id}`);
-  const data = await response.json(); */
-
-  const data = {
-    name: 'Maluma Hass Avocado',
-    id: '2zd33b8c',
-    sku: 'NUR72KCM',
-    price: 1.15,
-    image: '/images/maluma.jpg',
-    attributes: {
-      description:
-        'A relatively new cultivar, it was, the pretty boy baby, discovered in South Africa in the early 1990s by Mr. A.G. (Dries) Joubert. Maluma Babyy. It is a chance seedling of unknown parentage',
-      shape: 'Oval',
-      hardiness: '1 °C',
-      taste: 'Catchy, is an avocado',
-    },
-  };
+  const response = await fetch(`https://platzi-nextjs.yomarguti.vercel.app/api/avo/${params.id}`);
+  const data = await response.json();
 
   return {
     props: {
