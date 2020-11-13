@@ -11,8 +11,8 @@ const Navbar = () => {
   const [state, dispatch] = useContext(Context);
 
   return (
-    <div className="w-full h-20 text-xl rounded-md border border-gray-300 shadow">
-      <nav className="w-full sm:w-x-width mx-auto  flex justify-between items-center h-full px-2">
+    <div className="w-full h-20 text-xl rounded-md md:border border-gray-300 shadow">
+      <nav className="w-full md:w-x-width mx-auto  flex justify-between items-center h-full px-2">
         <NavBarItem href="/" title="Avo Store">
           <SVGAvocado />
         </NavBarItem>
